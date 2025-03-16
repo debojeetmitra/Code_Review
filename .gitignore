@@ -31,3 +31,4 @@ Frontend/dist/
 *.njsproj
 *.sln
 *.sw?
+Backend/.env
