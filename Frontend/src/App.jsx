@@ -22,13 +22,13 @@ function App() {
     prism.highlightAll();
   }, []); // ✅ Added empty dependency array
 
-async function reviewCode() {
-   
-  const response = await axios.post('http://localhost:3000/ai/get-review', {code})
-   
-  setReview(response.data)
-
-}
+  async function reviewCode() {
+    const API_URL = import.meta.env.VITE_API_URL; // Get API URL from .env
+    const response = await axios.post(`${API_URL}/ai/get-review`, { code });
+    setReview(response.data);
+  }
+  
+  
 
 
   return (
